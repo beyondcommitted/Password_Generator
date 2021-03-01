@@ -112,10 +112,10 @@ var upperCaseCharacters = [
   "Y",
   "Z",
 ];
-
+var passwordLength = ""
 // Gives the user options on how many characters they would like in the password and makes sure that the passowrd meets the acceptable criteria.
-function passwordOptions() {
-  var passwordLength = window.prompt(
+function generatePassword() {
+   passwordLength = window.prompt(
     "Choose a number between 8 and 128 for the length of your password."
   );
   if (isNaN(passwordLength)) {
@@ -129,20 +129,24 @@ function passwordOptions() {
   if (passwordLength > 128) {
     alert("Too many numbers in password length.");
     return;
+    
   }
-
+  
   // Gives the user options on what type of characters they would like to use in their password.
   var special = confirm(
-    "Would you like to use special characters in your password?"
+    "Click okay if you would like to use special characters in your password?"
   );
-  var numeric = confirm("Would you like to use numbers in your password?");
+  var numeric = confirm("Click okay if you would like to use numbers in your password?");
   var upperCase = confirm(
-    "Would you like to use uppercase letters in your password?"
+    "Click okay if you would like to use uppercase letters in your password?"
   );
   var lowerCase = confirm(
-    "Would you like to use lowercase letters in your password?"
+    "Click okay if you would like to use lowercase letters in your password?"
   );
-
+  var options = ""
+  
+   for( var i = 0; i < length; i++)
+    
   // Makes sure that the user is choosing at the least one of these options to choose from for a password.
   if (!special && !numeric && !upperCase && !lowerCase) {
     alert(
@@ -198,39 +202,47 @@ function passwordOptions() {
   } else if (special && !numeric && !lowerCase && !upperCase) {
     options = specialCharacters;
   }
-
-  var options = {
-    passwordLength,
-    upperCase,
-    lowerCase,
-    numeric,
-    special,
-  };
   return options;
-
 }
-passwordOptions();
+
+// Retrieve a random item from the provided array
+function getRandomItem(arr) {
+  // Generate a random index from 0 to the length - 1 of our array
+  var randomIndex = Math.random() * arr.length;
+  // round down our random index
+  randomIndex = Math.floor(randomIndex);
+  // return the random item based off of our random index
+  return arr[randomIndex];
+  // One liner of the above code
+  // return arr[Math.floor(Math.random() * arr.length)];
+}
+
 
 
 // Assignment Code
 var button = document.querySelector("#generate");
+var options = {
+    passwordLength,
+    upperCaseCharacters,
+    lowerCaseCharacters,
+    numericCharacters,
+    specialCharacters,
+  };
+
+
+
 
 // Write password to the #password input
-function writePassword() {
+ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
-for( var i = 0; i < length; i++) {
-  var pwdOptions = options[Math.floor(Math.random() * options.length)];
-// Add event listener to generate button
+ passwordText.value = password;
+ }
+
+  // Add event listener to generate button
 button.addEventListener("click", writePassword);
+ 
 
 
-}
-
-
-
-
-// Next step: generate password function, get retuned value from previous functions, each time run randome save, then concatenate all the options that are returned, push all characters.
+// document.getElementById(options).innerHTML = password;
