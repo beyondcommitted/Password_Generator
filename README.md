@@ -1,11 +1,15 @@
 # Password_Generator
 ## User Story
 ```
-With bring an employee with access to sensitive information
+With being an employee with access to sensitive information
 I may need to establish a secure and strong password, 
 I was able to build a generator of random characters.
 ```
-## Acceptance Criteria
+Below are the needed links to the submit this application to be graded:<br>
+ https://github.com/beyondcommitted/Password_Generator <br>
+ https://beyondcommitted.github.io/Password_Generator/index.html
+
+## Meeting the Acceptance Criteria
 ```
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
