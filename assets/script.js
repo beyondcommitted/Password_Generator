@@ -1,19 +1,3 @@
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-
 // Generate password with 8-12 characters
 
 // Include special characters in password
@@ -202,18 +186,12 @@ function generatePassword() {
   } else if (special && !numeric && !lowerCase && !upperCase) {
     options = specialCharacters;
   }
-  console.log("option: ", options);
-  console.log("passwordLength:", passwordLength);
-
   var passwordText = "";
   for (var i = 0; i < passwordLength; i++) {
-    // options[10]
     passwordText += options[Math.floor(Math.random() * options.length)];
-    // += options.arr(Math.floor(Math.random() * arr.length));
   }
   return passwordText;
 }
-
 // Retrieve a random item from the provided array
 function getRandomItem(arr) {
   // Generate a random index from 0 to the length - 1 of our array
@@ -222,10 +200,7 @@ function getRandomItem(arr) {
   randomIndex = Math.floor(randomIndex);
   // return the random item based off of our random index
   return arr[randomIndex];
-  // One liner of the above code
-  // return arr[Math.floor(Math.random() * arr.length)];
 }
-
 // Assignment Code
 var button = document.querySelector("#generate");
 var options = {
