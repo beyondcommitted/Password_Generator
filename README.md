@@ -25,5 +25,5 @@ THEN the password is either displayed in an alert or written to the page
 ```
 ## Mock Up
 
-https://raw.githubusercontent.com/beyondcommitted/Password_Generator/main/assets/images/2021-03-01%20(7).png
+![Passwor Generator Demo](https://raw.githubusercontent.com/beyondcommitted/Password_Generator/main/assets/images/2021-03-01%20(7).png)
 
