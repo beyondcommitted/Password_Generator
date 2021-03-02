@@ -112,10 +112,10 @@ var upperCaseCharacters = [
   "Y",
   "Z",
 ];
-var passwordLength = ""
+var passwordLength;
 // Gives the user options on how many characters they would like in the password and makes sure that the passowrd meets the acceptable criteria.
 function generatePassword() {
-   passwordLength = window.prompt(
+  passwordLength = window.prompt(
     "Choose a number between 8 and 128 for the length of your password."
   );
   if (isNaN(passwordLength)) {
@@ -143,9 +143,9 @@ function generatePassword() {
   var lowerCase = confirm(
     "Click okay if you would like to use lowercase letters in your password?"
   );
-  var options = ""
   
-   for( var i = 0; i < length; i++)
+  var options = [];
+  
     
   // Makes sure that the user is choosing at the least one of these options to choose from for a password.
   if (!special && !numeric && !upperCase && !lowerCase) {
@@ -202,7 +202,16 @@ function generatePassword() {
   } else if (special && !numeric && !lowerCase && !upperCase) {
     options = specialCharacters;
   }
-  return options;
+  console.log("option: ", options)
+  console.log("passwordLength:", passwordLength)
+  
+var passwordText = '';
+  for( var i = 0; i < passwordLength; i++) {
+    // options[10]
+passwordText += options[Math.floor(Math.random() * options.length)];
+    // += options.arr(Math.floor(Math.random() * arr.length));
+  }
+ return passwordText;
 }
 
 // Retrieve a random item from the provided array
@@ -245,4 +254,4 @@ button.addEventListener("click", writePassword);
  
 
 
-// document.getElementById(options).innerHTML = password;
+
