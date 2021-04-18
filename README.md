@@ -6,8 +6,8 @@ I may need to establish a secure and strong password,
 I was able to build a generator of random characters.
 ```
 Below are the needed links to the submit this application to be graded:<br>
- https://github.com/beyondcommitted/Password_Generator <br>
- https://beyondcommitted.github.io/Password_Generator/index.html
+ ## [GitHub](https://github.com/beyondcommitted/Password_Generator)<br>
+ ## [Deployment](https://beyondcommitted.github.io/Password_Generator/index.html)
 
 ## Meeting the Acceptance Criteria
 ```
